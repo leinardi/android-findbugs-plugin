@@ -1,0 +1,72 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'com.bmuschko.nexus'
+apply plugin: 'idea'
+
+dependencies {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:3.0.0-beta4'
+}
+
+group = 'com.leinardi.android'
+version = '1.0.0'
+
+install {
+    repositories.mavenInstaller {
+        pom.artifactId = 'findbugs'
+    }
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.artifactId = 'findbugs'
+    }
+}
+
+modifyPom {
+    project {
+        name 'Android FindBugs Plugin'
+        description 'Sets up FindBugs for Gradle-based Android projects.'
+        url 'https://github.com/leinardi/android-findbugs-plugin'
+        inceptionYear '2017'
+
+        scm {
+            url 'https://github.com/leinardi/android-findbugs-plugin'
+            connection 'scm:git:git://github.com/leinardi/android-findbugs-plugin.git'
+            developerConnection 'scm:git:ssh://git@github.com/leinardi/android-findbugs-plugin.git'
+        }
+
+        licenses {
+            license {
+                name 'The Apache Software License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                distribution 'repo'
+            }
+        }
+
+        developers {
+            developer {
+                id 'leinardi'
+                name 'Roberto Leinardi'
+                email 'roberto@leinardi.com'
+            }
+        }
+    }
+}
+
