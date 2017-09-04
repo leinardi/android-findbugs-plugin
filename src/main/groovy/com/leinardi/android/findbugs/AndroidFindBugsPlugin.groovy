@@ -30,8 +30,8 @@ import org.gradle.api.tasks.StopExecutionException
 class AndroidFindBugsPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
-        if (!hasPlugin(project, FindBugsPlugin)) {
-            throw new StopExecutionException("Must be applied with 'findbugs' plugin.")
+        project.plugins.with {
+            apply FindBugsPlugin
         }
 
         def variants

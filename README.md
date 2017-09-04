@@ -11,14 +11,13 @@ Apply the plugin in your `build.gradle` along with the regular 'findbugs' plugin
 ```groovy
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath 'com.leinardi.android:findbugs:1.0.0'
+        classpath 'com.leinardi.android:findbugs:1.0.3'
     }
 }
 
-apply plugin: 'findbugs'
 apply plugin: 'com.leinardi.android.findbugs'
 
 findbugs {
