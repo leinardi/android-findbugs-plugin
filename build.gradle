@@ -26,7 +26,7 @@ dependencies {
 
     compile gradleApi()
     compile localGroovy()
-    compile 'com.android.tools.build:gradle:3.0.0-beta4'
+    compile 'com.android.tools.build:gradle:3.0.0-beta7'
 }
 
 group = GROUP_ID
