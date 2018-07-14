@@ -1,3 +1,5 @@
+WARNING! FURTHER DEVELOPMENT AND SUPPORT IS DISCONTINUED.
+=========================================================
 Android FindBugs Plugin
 ==================
 
